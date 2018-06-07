@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // 开发环境配置
 module.exports = {
-	entry: '../src/index.js',
+	entry: './src/index.js',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, '../dist')
@@ -38,7 +38,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin()
 	],
 	devServer:{
-		contentBase: path.resolve(__dirname, '../dist')
+		contentBase: path.resolve(__dirname, './dist')
 		// open: true,
 	}
 }

@@ -1,12 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
-const config = require('config')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 // 生产环境打包配置
 module.exports = {
-	entry: ['babel-polyfill', '../src/index.js'],
+	entry: ['babel-polyfill', './src/index.js'],
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, '../dist'),
