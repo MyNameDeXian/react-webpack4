@@ -1,4 +1,5 @@
 const path = require('path')
+const glob = require('glob')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -15,16 +16,6 @@ module.exports = {
 	mode: 'production',
 	module: {
 		rules: [
-			// {
-			// 	test: /\.js$/,
-			// 	exclude: /node_modules/,
-			// 	use: {
-			// 		loader: "babel-loader",
-			// 		options:{
-			// 			presets: [["import", { libraryName: "antd", style: "css" }]]
-			// 		}
-			// 	}
-			// },
 			{
 				test: /\.css$/,
 				// postcss-loader 不全浏览器前缀
@@ -56,13 +47,21 @@ module.exports = {
          // include all types of chunks
          chunks: "all",
          automaticNameDelimiter: '.',
-         name: 'sky'
+         name: 'Free'
       }
    },
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './index.html'
+			template: './index.html',
+			minify: {
+				// 去掉属性的单双引号之类的，节省一点空间
+				removeAttributeQuotes: true
+			},
 		}),
 		new UglifyJsPlugin()
+		new PurifyCssPlugin({
+			// 去除无用的 css
+			paths: glob.sync(path.join(__dirname, './src/*.html'))
+		}),
 	]
 }
