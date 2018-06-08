@@ -5,12 +5,12 @@ const proConfig = require('./webpack/webpack.pro.js')
 
 if(process.env.NODE_ENV === 'Pro'){
 	// 生产环境
-	var avd = proConfig;
+	var config = proConfig;
 } else {
 	// 开发环境
-	var avd = devConfig;
+	var config = devConfig;
 }
 
-module.exports = merge(commonConfig, avd);
+module.exports = merge(commonConfig, config);
 
 

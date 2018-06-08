@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
+import Home from 'pages/Home'
 
 render(
-	<div>Free</div>,
-	documnet.getElementById('root')
+	<Home>Free</Home>,
+	document.getElementById('root')
 )
