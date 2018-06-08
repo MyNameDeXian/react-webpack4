@@ -7,9 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const resolve = {
 	alias: {
 		pages: path.join(__dirname, '../src/pages'),
-		actions: path.join(__dirname, '../src/actions'),
 		components: path.join(__dirname, '../src/components'),
-		services: path.join(__dirname, '../src/services')
 	},
 	// 文件扩展名
 	extensions: ['.js']

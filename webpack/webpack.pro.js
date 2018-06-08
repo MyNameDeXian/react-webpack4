@@ -5,15 +5,26 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 // 生产环境打包配置
 module.exports = {
-	entry: ['babel-polyfill', './src/index.js'],
+	// ['babel-polyfill', './src/index.js'],
+	entry: ['babel-polyfill', 'react', './src/index.js'],
 	output: {
-		filename: '[name].bundle.js',
+		filename: '[name].[chunkhash:8].js',
 		path: path.resolve(__dirname, '../dist'),
-		publicPath: '/'
+		publicPath: './'
 	},
 	mode: 'production',
 	module: {
 		rules: [
+			// {
+			// 	test: /\.js$/,
+			// 	exclude: /node_modules/,
+			// 	use: {
+			// 		loader: "babel-loader",
+			// 		options:{
+			// 			presets: [["import", { libraryName: "antd", style: "css" }]]
+			// 		}
+			// 	}
+			// },
 			{
 				test: /\.css$/,
 				// postcss-loader 不全浏览器前缀
@@ -40,6 +51,14 @@ module.exports = {
 			}
 		]
 	},
+	optimization: {
+      splitChunks: {
+         // include all types of chunks
+         chunks: "all",
+         automaticNameDelimiter: '.',
+         name: 'sky'
+      }
+   },
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './index.html'
