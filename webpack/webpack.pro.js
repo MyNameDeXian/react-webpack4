@@ -7,7 +7,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // 生产环境打包配置
 module.exports = {
 	// ['babel-polyfill', './src/index.js'],
-	entry: ['babel-polyfill', 'react', './src/index.js'],
+	entry: ['babel-polyfill', './src/index.js'],
 	output: {
 		filename: '[name].[chunkhash:8].js',
 		path: path.resolve(__dirname, '../dist'),
@@ -59,9 +59,5 @@ module.exports = {
 			},
 		}),
 		new UglifyJsPlugin()
-		new PurifyCssPlugin({
-			// 去除无用的 css
-			paths: glob.sync(path.join(__dirname, './src/*.html'))
-		}),
 	]
 }
