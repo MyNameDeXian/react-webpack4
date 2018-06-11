@@ -10,8 +10,6 @@ class Home extends Component{
 				<Button>
 					Hello Free
 				</Button>
-				<Input />
-				<Switch defaultChecked onChange={this.onChange} />
 			</div>
 		)
 	}

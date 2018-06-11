@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Home from 'pages/Home'
+import Routers from './routers/'
 
 render(
-	<Home>Free</Home>,
+	<Routers>Free</Routers>,
 	document.getElementById('root')
 )
