@@ -39,12 +39,12 @@ module.exports = {
 	],
 	devServer:{
 		contentBase: path.resolve(__dirname, './dist'),
-		host: 'localhost',
-		compress: true,
-		open: true,
 		historyApiFallback:{
 			//配置 BrowserRouter
          index: 'dist/index.html'
       },
+		host: 'localhost',
+		compress: true,
+		// open: true,
 	}
 }

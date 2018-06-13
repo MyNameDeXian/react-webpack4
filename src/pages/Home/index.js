@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './home.scss'
 import { Button } from 'antd'
+import Header from 'components/Header'
 
 class Home extends Component{
   constructor(props){
@@ -11,9 +12,13 @@ class Home extends Component{
   }
   render(){
     return(
-      <Button onClick={this.clickBtn}>
-        To Address
-      </Button>
+      <div className='home-page'>
+        <Header/>
+        <div className='top-banner'></div>
+        <Button onClick={this.clickBtn}>
+          To Address
+        </Button>
+      </div>
     )
   }
   clickBtn = () =>{

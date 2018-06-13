@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
-import './assets/css/common.scss'
-import './assets/css/flex-style.scss'
+import './assets/common.scss'
+import './assets/flex-style.scss'
 import Routers from './routers/'
 
 render(
