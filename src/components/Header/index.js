@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './header.scss'
 import Input from '@material-ui/core/Input'
+import Button from '@material-ui/core/Button'
 
 class Header extends Component {
 	constructor(props){
@@ -12,11 +13,11 @@ class Header extends Component {
 	render(){
 		let { focus } = this.state;
 		return(
-			<header className='header-comp flex-row f-center f-ai-c'>
-				<div className='search flex-row'>
-					<Input 
-						placeholder='search'/>
-				</div>
+			<header className='header-comp flex-row f-ai-c f-jc-sa'>
+	        	<Button variant="outlined" color="primary" onClick={this.clickBtn}>
+	          	To Address
+	        	</Button>
+				<Input placeholder='search'/>
 			</header>
 		)
 	}
@@ -26,7 +27,10 @@ class Header extends Component {
 			focus: !focus
 		})
 	}
-
+	clickBtn = () =>{
+    	let { history } = this.props;
+    	history.push('/address')
+  	}
 }
 
 export default Header

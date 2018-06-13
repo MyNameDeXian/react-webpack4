@@ -13,18 +13,12 @@ class Home extends Component{
   render(){
     return(
       <div className='home-page'>
-        <Header/>
+        <Header history={this.props.history}/>
         <div className='top-banner'></div>
-        <Button onClick={this.clickBtn}>
-          To Address
-        </Button>
       </div>
     )
   }
-  clickBtn = () =>{
-    let { history } = this.props;
-    history.push('/address')
-  }
+  
 }
 
 export default Home
