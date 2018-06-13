@@ -3,8 +3,12 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux'
 import rootReducers from '../modules/'
 
+const home = ( state = {} ) => {
+	return state;
+}
+
 const store = createStore(
-	rootReducers,
+	home,
 	applyMiddleware(thunk)
 )
 

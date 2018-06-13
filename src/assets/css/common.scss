@@ -1,0 +1,30 @@
+/* --- 样式的顺序
+	布局方式 定位 浮动 flex display 等
+	边距 margin padding
+	宽高 height width
+	边框 border
+	字体样式
+	背景
+*/
+
+body,ul,li, p, h1, h2, h3{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	min-height: 100%;
+}
+body{
+	background: url('../images/main_bg.jpg') repeat;
+}
+ul,li{
+	list-style: none;
+}
+
+.hidden{
+	display: none;
+}
+// 禁止选中文本
+.user-select-none{
+	user-select: none;
+}

@@ -1,0 +1,88 @@
+/* -- flex布局 -- 容器上的属性
+	flex-direction: row | row-reverse | column | column-reverse;
+	flex-wrap: nowrap | wrap | wrap-reverse; 是否换行
+	flex-flow: <flex-direction> || <flex-wrap>; 1 和 2 的简写
+
+	定义了项目在主轴上的对齐方式
+	justify-content: flex-start | flex-end | center | space-between | space-around;
+		space-between：两端对齐，项目之间的间隔都相等。
+		space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+
+	定义项目在交叉轴上如何对齐
+	align-items: flex-start | flex-end | center | baseline | stretch;
+		baseline: 项目的第一行文字的基线对齐。
+		stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+
+	定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+	align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+------------------------------------------------------------------------------------------------
+项目上的属性
+	order: 属性定义项目的排列顺序。数值越小，排列越靠前，默认为 0
+	flex-grow: 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大
+	flex-shrink: 
+	flex-basis
+	flex: flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto
+	align-self: auto | flex-start | flex-end | center | baseline | stretch
+===============================================*/
+.flex-row{
+	display: flex;
+	flex-direction: row;
+}
+.flex-col{
+	display: flex;
+	flex-direction: column;
+}
+/* --------- 单双字母代表含义 ----
+	f -> flex 
+	c -> center
+	ai -> align-items
+	jc -> justify-content
+	sb -> space-between
+	sa -> space-around
+ ----------------------------------*/
+ // 交叉轴方向居中
+.f-ai-c{
+	align-items: center;
+}
+// 主轴方向居中
+.f-jc-c{
+	justify-content: center;
+}
+// 居中
+.f-center{
+	@extend .f-ai-c;
+	@extend .f-jc-c;
+}
+// 主轴方向两端对象
+.f-jc-sb{
+	justify-content: space-between;
+}
+// 主轴方向 等距离对齐
+.f-jc-sa{
+	justify-content: space-around;
+}
+// 交叉轴居中，主轴两端对齐
+.f-sb-c{
+	@extend .f-ai-c;
+	@extend .f-jc-sb;
+}
+// 交叉轴居中，主轴等距离对齐
+.f-sa-c{
+	@extend .f-ai-c;
+	@extend .f-jc-sa;
+}
+// 元素换行 
+.f-wrap{
+	flex-wrap: wrap;
+}
+.f-nowrap{
+	flex-wrap: nowrap;
+}
+// 占满剩余空间
+.f-1{
+	flex: 1;
+}
+// 改元素在主轴方向末端对齐
+.f-end{
+	align-self: end;
+}
