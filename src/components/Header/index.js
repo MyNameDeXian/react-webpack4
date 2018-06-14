@@ -8,6 +8,8 @@ import Tab from '@material-ui/core/Tab';
 import Search from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Home from '@material-ui/icons/Home';
+import Avatar from '@material-ui/core/Avatar';
 
 class Header extends Component {
 	constructor(props){
@@ -21,6 +23,11 @@ class Header extends Component {
 		// fullWidth centered scrollable
 		return(
 			<header className='header-comp flex-row f-ai-c'>
+				<IconButton>
+					<Avatar>
+						<Home/>
+					</Avatar>
+				</IconButton>
 				<Tabs
 					className='f-1'
 	          	value={this.state.value}
@@ -30,7 +37,6 @@ class Header extends Component {
 	          	scrollable 
 	          	scrollButtons="auto"
           	>
-	          	<Tab label="home" />
 	          	<Tab label="plan" />
 	          	<Tab label="web learning" />
 	          	<Tab label="website" />
