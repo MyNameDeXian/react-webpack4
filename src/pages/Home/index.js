@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './home.scss'
-import { Button } from 'antd'
+import { tabsData } from './homeData'
 import Header from 'components/Header'
+import Banner from 'components/Banner'
+import Cards from 'components/Cards'
 
 class Home extends Component{
   constructor(props){
@@ -13,8 +15,9 @@ class Home extends Component{
   render(){
     return(
       <div className='home-page'>
-        <Header history={this.props.history}/>
-        <div className='top-banner'></div>
+        <Header tabsData={tabsData}/>
+        <Banner />
+        <Cards />
       </div>
     )
   }

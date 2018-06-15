@@ -10,36 +10,50 @@ import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Home from '@material-ui/icons/Home';
 import Avatar from '@material-ui/core/Avatar';
+import { withRouter } from 'react-router'
 
+/* Header 
+	接收参数  	type    	content
+	tabsData  	Array   	String
+	activeTab 	Number 	默认 false
+	onClick		Event		第一个参数传激活的 tab key
+*/
 class Header extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			value: false
+			tabsData: [{label: 'No Data', path: '/'}]
 		}
 	}
+	componentWillMount(){
+		let { tabsData, activeTab } = this.props;
+		tabsData = tabsData || this.state.tabsData;
+		activeTab = activeTab != null && activeTab;
+		this.setState({ tabsData, activeTab })
+	}
 	render(){
-		let { focus } = this.state;
-		// fullWidth centered scrollable
+		let { activeTab, tabsData } = this.state;
+		let { children } = this.props;
 		return(
 			<header className='header-comp flex-row f-ai-c'>
-				<IconButton>
+				<IconButton onClick={this.handleChange}>
 					<Avatar>
 						<Home/>
 					</Avatar>
 				</IconButton>
 				<Tabs
 					className='f-1'
-	          	value={this.state.value}
+	          	value={activeTab}
 	          	onChange={this.handleChange}
 	          	indicatorColor="primary"
 	          	textColor="primary"
 	          	scrollable 
-	          	scrollButtons="auto"
-          	>
-	          	<Tab label="plan" />
-	          	<Tab label="web learning" />
-	          	<Tab label="website" />
+	          	scrollButtons="auto">
+          	{
+					tabsData.map((item, key) =>(
+						<Tab key={key} label={item.label}/>
+					))
+          	}
 	        	</Tabs>
 				<Input placeholder='search'
 					endAdornment={
@@ -56,20 +70,19 @@ class Header extends Component {
 		)
 	}
 	handleChange = (e, activeTab) =>{
+		let { onClick, match, history, tabsData } = this.props;
+		if( activeTab == null ){
+			if( match.path !== '/' ){
+				history.push('/'); 
+				return;
+			}
+			activeTab = false;
+		} 
+		onClick && onClick(activeTab);
 		this.setState({
-			value: activeTab
+			activeTab 
 		})
 	}
-	setSearchBox = () =>{
-		let { focus } = this.state;
-		this.setState({
-			focus: !focus
-		})
-	}
-	clickBtn = () =>{
-    	let { history } = this.props;
-    	history.push('/address')
-  	}
 }
 
-export default Header
+export default withRouter(Header)

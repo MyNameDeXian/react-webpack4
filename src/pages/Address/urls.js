@@ -8,6 +8,7 @@ w3ctenh 		-- https://www.w3ctech.com/
 前端资源 		-- https://github.com/jsfront/src/blob/master/qq.md
 大前端论坛 	-- http://www.daqianduan.com/
 H5 语义化  	-- http://www.daqianduan.com/6549.html
+cookie 		-- https://blog.csdn.net/qq_33594380/article/details/79493358
 `
 url = url.split('\n');
 export default url;

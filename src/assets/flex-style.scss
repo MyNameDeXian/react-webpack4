@@ -71,10 +71,14 @@
 	@extend .f-ai-c;
 	@extend .f-jc-sa;
 }
+.f-jc-end{
+	justify-content: flex-end;
+}
 // 元素换行 
 .f-wrap{
 	flex-wrap: wrap;
 }
+// 交叉轴右端对齐
 .f-nowrap{
 	flex-wrap: nowrap;
 }

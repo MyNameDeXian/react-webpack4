@@ -9,6 +9,7 @@ const resolve = {
 		assets: path.join(__dirname, '../src/assets'),
 		components: path.join(__dirname, '../src/components'),
 		pages: path.join(__dirname, '../src/pages'),
+		images: path.join(__dirname, '../src/images'),
 		modules: path.join(__dirname, '../src/modules'),
 		services: path.join(__dirname, '../src/services'),
 	},
