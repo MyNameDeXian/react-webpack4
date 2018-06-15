@@ -12,3 +12,5 @@ const cardsData =
 	content: 'skjljf sl jslkdfl sjdkfjsl jslkdjflksjd ljsldjflksdjfl ssfadf',
 	link: ''
 }]
+
+export default cardsData;
