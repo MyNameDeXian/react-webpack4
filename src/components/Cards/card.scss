@@ -1,12 +1,14 @@
+$cardWidth: 200px;
 .cards-list{
-	max-width: 900px;
+	max-width: 1000px;
 	margin: 50px auto 0;
-	padding-right: 56px;
+	padding-right: 50px;
 	.cards{
-		max-width: 400px;
+		max-width: 200px;
 		margin-bottom: 50px;
+		margin-left: 50px;
 		.media{
-			height: 300px;
+			height: 200px;
 			background-position: center top;
 			// background-size: contain;
 		}

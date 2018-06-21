@@ -11,35 +11,18 @@ import Typography from '@material-ui/core/Typography';
 
 import cardsData from './cardsData'
 
-class Cards extends Component{
-	render(){
-		return(
-			<div className='cards-list flex-row f-jc-sb f-wrap'>
-			{
-				cardsData.map((item, key) =>(
-					<CardItem />
-				))
-			}
-        	</div>
-
-		)
-	}
-}
-
 const CardItem = (props) =>(
 	<Card className='cards'>
      	<CardMedia
      		className='media'
        	image={ props.img || require('../../images/5.jpg') }
-       	disableActionSpacing={true}
      	/>
      	<CardContent>
        	<Typography gutterBottom variant="headline" component="h2">
          	PLAN
        	</Typography>
        	<Typography component="p">
-         	Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-         	across all continents except Antarctica
+         	{ props.content }
        	</Typography>
      	</CardContent>
      	<CardActions className='flex-row f-jc-end'>
@@ -49,5 +32,21 @@ const CardItem = (props) =>(
      	</CardActions>
 	</Card>
 )
+
+class Cards extends Component{
+   render(){
+      return(
+         <div className='cards-list flex-row f-wrap'>
+         {
+            cardsData.map((item, key) =>(
+               <CardItem key={key} content={item.content}/>
+            ))
+         }
+         </div>
+
+      )
+   }
+}
+
 
 export default withRouter(Cards)

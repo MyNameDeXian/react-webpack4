@@ -9,4 +9,10 @@ export const tabsData =
 },{
 	label: 'website',
 	path: 'website'
+},{
+	label: 'Show Picture',
+	path: 'images'
+},{
+	label: 'test',
+	path: 'test'
 }]

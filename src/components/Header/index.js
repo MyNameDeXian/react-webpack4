@@ -22,7 +22,7 @@ class Header extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			tabsData: [{label: 'No Data', path: '/'}]
+			tabsData: [{label: 'go home', path: ''}]
 		}
 	}
 	componentWillMount(){
@@ -70,14 +70,18 @@ class Header extends Component {
 		)
 	}
 	handleChange = (e, activeTab) =>{
-		let { onClick, match, history, tabsData } = this.props;
+		let { onClick, match, history } = this.props;
+		let { tabsData } = this.state;
+		let path = '/'
+		console.log(activeTab)
 		if( activeTab == null ){
-			if( match.path !== '/' ){
-				history.push('/'); 
-				return;
-			}
-			activeTab = false;
-		} 
+			activeTab = false
+		} else {
+			path += tabsData[activeTab].path;
+		}
+		if(match.path !== path){
+			history.push(path);
+		}
 		onClick && onClick(activeTab);
 		this.setState({
 			activeTab 
