@@ -38,6 +38,8 @@ function makeImage(images){
 
 function image(img, i){
 	return(
-		<img key={i} src={img} alt=""/>
+		<div key={i} className='img-box'>
+			<img src={img} alt=""/>
+		</div>
 	)
 }
