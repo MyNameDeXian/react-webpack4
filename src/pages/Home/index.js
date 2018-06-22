@@ -11,7 +11,7 @@ class Home extends Component{
       <div className='home-page'>
         <Header tabsData={tabsData}/>
         <Banner />
-        { this.props.children }
+        <Cards></Cards>
       </div>
     )
   }

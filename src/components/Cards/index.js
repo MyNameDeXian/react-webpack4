@@ -36,7 +36,7 @@ const CardItem = (props) =>(
 class Cards extends Component{
    render(){
       return(
-         <div className='cards-list flex-row f-wrap'>
+         <div className='cards-list flex-row f-jc-sa f-wrap'>
          {
             cardsData.map((item, key) =>(
                <CardItem key={key} content={item.content}/>

@@ -13,6 +13,6 @@ export const tabsData =
 	label: 'Show Picture',
 	path: 'images'
 },{
-	label: 'test',
-	path: 'test'
+	label: 'webpack',
+	path: 'webpack'
 }]
