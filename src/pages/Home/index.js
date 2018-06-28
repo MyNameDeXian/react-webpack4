@@ -4,6 +4,7 @@ import { tabsData } from './homeData'
 import Header from 'components/Header'
 import Banner from 'components/Banner'
 import Cards from 'components/Cards'
+import TitleTip from 'components/TitleTip'
 
 class Home extends Component{
   render(){
@@ -11,6 +12,7 @@ class Home extends Component{
       <div className='home-page'>
         <Header tabsData={tabsData}/>
         <Banner />
+        <TitleTip />
         <Cards></Cards>
       </div>
     )

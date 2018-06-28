@@ -1,0 +1,27 @@
+.title-tip{
+	margin-top: 30px;
+	padding: 0 30px;
+	height: 58px;
+	.ch-title{
+		margin: 0;
+		font-size: 24px;
+	}
+	.modle{
+		width: 100%;
+		.us-title{
+			margin: 0 30px;
+			font-size: 18px;
+			opacity: .6;
+		}
+		.line{
+			height: 0;
+			border-bottom: 1px solid #ccc;
+		}
+	}
+	.bottom-line{
+		margin-top: 6px;
+		height: 0;
+		width: 60px;
+		border-bottom: 3px solid #48989f;
+	}
+}
